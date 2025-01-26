@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Student Pantry - Week 5 Tasks</title>
+    
+    <!-- Google Font for Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+   
+    <style>
+    
+         nav {
+            background-color: #486915;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            margin: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+        }
+    
+        nav a {
+            display: inline-block;
+            color: #daeac7;
+            padding: 20px 40px;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+        }
+    
+        nav a:hover {
+            background-color: #6a9231;
+            color: #749d3e;
+        }
+        /* General body and layout */
+        body {
+            font-family: 'Lora', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #c6c9c0 0%, #ced0c5 100%);
+            color: #140303;
+            line-height: 1.6;
+        }
+        h1, h2, h3 {
+            font-family: 'Lora', serif;
+            color: #d2e2bc;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #1b470d;
+        }
+
+        /* Header Styling */
+        header {
+            background: #486915;
+            color: #d4d7ca;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-bottom: 4px solid #173a09;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        header h2 {
+            font-size: 1.5rem;
+            margin-top: 5px;
+        }
+       
+
+    
+        
+
+    .writing-skills-table th, .writing-skills-table td {
+        padding: 15px;
+        text-align: left;
+        border: 1px solid #ccc;
+    }
+
+    .writing-skills-table th {
+        background-color: #486915;
+        color: #fff;
+    }
+
+    .writing-skills-table tr:nth-child(even) {
+        background-color: #eef0e8;
+    }
+
+
+        /* Main content area */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background-color: #d8ddcb;
+            
+        }
+
+        /* Section Styling */
+        .section {
+            background-color: #dae2c5;
+            margin-bottom: 30px;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: #702d4a;
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+
+        .section p, .section ul, .section ol {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        .section ul, .section ol {
+            padding-left: 25px;
+        }
+
+        .section ul li, .section ol li {
+            margin-bottom: 10px;
+        }
+
+        /* Button Styling */
+        .cta-button {
+            background-color: #95d889;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        
+
+        /* Footer Styling */
+        footer {
+            background-color: #222c15;
+            color: #f6f6f6;
+            text-align: center;
+            padding: 20px;
+            font-size: 1rem;
+        }
+
+        footer a {
+            color: #afd88d;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #f6f6f6;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Week 5</h1>
+        <h2> Text</h2>
+    </header>
+
+    <!-- Navigation Bar -->
+   <nav aria-label="Weekly Navigation">
+    <a href="homepage.html" aria-label="homepage">homepage</a>
+    <a href="week1.html" aria-label="Week 1">Week 1</a>
+    <a href="week2.html" aria-label="Week 2">Week 2</a>
+    <a href="week3.html" aria-label="Week 3">Week 3</a>
+    <a href="week5.html" aria-label="Week 5">Week 5</a>
+    <a href="week7.html" aria-label="Week 7">Week 7</a>
+    <a href="moodboard.html" aria-label="Moodboard">Moodboard</a>
+    <a href="week8.html" aria-label="Week 8">Week 8</a>
+    <a href="week9.html" aria-label="Week 9">Week 9</a>
+    <a href="week11.html" aria-label="Week 11">Week 11</a>
+</nav>
+
+    <!-- Main content -->
+    <div class="container">
+        
+       
+<section class="section">
+    <h2>TASK1 Professional Writing Characteristics</h2>
+    <p>Evaluating 'Simple Recipe's' Website </p>
+    <table class="writing-skills-table">
+        <thead>
+            <tr>
+                <th>Characteristic</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Active Voice</strong></td>
+                <td>The website often uses active voice and second-person pronouns that directly engage the reader, making the instructions feel personal and easy to follow.</td>
+            </tr>
+            <tr>
+                <td><strong>Strong Nouns and Verbs</strong></td>
+                <td>Effectively uses strong nouns and verbs, benefiting recipes and instructions with precise, action-oriented language that helps readers visualize the process and outcomes.</td>
+            </tr>
+            <tr>
+                <td><strong>Biases</strong></td>
+                <td>Simple Recipes may unintentionally reflect biases, such as prioritizing Western-style cooking techniques and ingredients, potentially overlooking global cuisines or alternative cooking traditions.</td>
+            </tr>
+            <tr>
+                <td><strong>Parallelism</strong></td>
+                <td>Evidence of parallelism, especially in step-by-step directions, to maintain clarity and consistency (e.g., "Save time, reduce waste, and enjoy delicious meals with our recipes").</td>
+            </tr>
+            <tr>
+                <td><strong>Clarity</strong></td>
+                <td>Prioritizes clarity by using concise sentences and straightforward instructions.</td>
+            </tr>
+            <tr>
+                <td><strong>Sentence Variety</strong></td>
+                <td>Demonstrates effective sentence variety, mixing short, direct instructions with more detailed explanations to prevent monotony.</td>
+            </tr>
+            <tr>
+                <td><strong>Conciseness</strong></td>
+                <td>Excels in conciseness, delivering clear instructions without unnecessary details, making it easy for users to follow recipes.</td>
+            </tr>
+            <tr>
+                <td><strong>Tone and Voice</strong></td>
+                <td>The tone is approachable and friendly, aiming to engage readers while maintaining professionalism.</td>
+            </tr>
+            <tr>
+                <td><strong>Conversational Prose</strong></td>
+                <td>Uses conversational language, ensuring content flows smoothly and avoids technical jargon.</td>
+            </tr>
+            <tr>
+                <td><strong>Simple Words</strong></td>
+                <td>Simple, everyday language is used, ensuring accessibility for a wide audience.</td>
+            </tr>
+            <tr>
+                <td><strong>Correctness</strong></td>
+                <td>Adheres to editorial guidelines to ensure content accuracy.</td>
+            </tr>
+            <tr>
+                <td><strong>Shorter Paragraphs</strong></td>
+                <td>Content is broken into short, digestible paragraphs, enhancing readability.</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+        <!-- Section 2 -->
+        <section class="section">
+            <h2>TASK2:The AWE Writing Process</h2>
+            <p><strong>Assess:</strong> We aim to empower University of Glasgow students with easy-to-follow recipes that reduce food waste and promote sustainability.</p>
+            <ul>
+                <li><strong>Purpose:</strong> Simplify cooking with available ingredients.</li>
+                <li><strong>Audience:</strong> Primarily University of Glasgow students, then expanding to others.</li>
+                <li><strong>Content Needs:</strong> Clear instructions, sustainability tips, and interactive features like an ingredient search bar.</li>
+            </ul>
+
+            <p><strong>Write:</strong> The content is written in a friendly, motivational tone to encourage students. From recipes to sustainability tips, everything is designed to be simple and accessible.</p>
+            
+            <p><strong>Edit:</strong> We ensure consistency across pages, correct any grammatical errors, and refine the user experience based on feedback to keep the platform engaging and functional.</p>
+        </section>
+
+        <section id="voyant-tool">
+            <summary><h2 style="display: inline;">  Voyant-tools </h2></summary>
+            <iframe style='width: 100%; height: 500px;' src='https://voyant-tools.org/?corpus=4c5976ea3db53ccb138fac1bf7676271'></iframe>
+            <p>
+                <section class="section">
+                    <div class="reflection-container">
+                        <h2 style="color: #702d4a;">Reflection on the Analysis</h2>
+                        <p>
+                            At first, I based my analysis of The Student Pantry's writing on my own judgment. However, after using Voyant Tool for some data-driven analysis, I got a clearer picture of how vocabulary is used and what words pop up most. Other food sustainability and student websites helped me see some common trends. Now, I’m using that info to tweak The Student Pantry’s content and ensure the language is more engaging and effective for the audience.
+                        </p>
+                    </div>
+                </section>
+            </p>
+        </section>
+
+        <!-- Section 3 -->
+        <section class="section">
+            <h2>Sample Content</h2>
+            <p><strong>Sample 1:</strong> "Running low on ingredients? No problem! At The Student Pantry, we help you make the most of what you have. Just enter your available ingredients, and we’ll suggest quick, easy meals that don’t waste a thing."</p>
+            <p><strong>Sample 2:</strong> "Every meal counts. Try our recipes, reduce food waste, and create something delicious with just a few ingredients!"</p>
+        </section>
+
+       
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>2791720P MAD Final Project</p>
+    </footer>
+
+</body>
+</html>

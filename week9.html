@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Analysis on Websites</title>
+    <style>
+         nav {
+            background-color: #486915;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            margin: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+        }
+    
+        nav a {
+            display: inline-block;
+            color: #daeac7;
+            padding: 20px 30px;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+        }
+    
+        nav a:hover {
+            background-color: #6a9231;
+            color: #222c15;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #203a16;
+            color: #333;
+        }
+        header {
+            background-color:  #486915;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 2.5em;
+            letter-spacing: 1px;
+        }
+        main {
+            padding: 40px 20px;
+        }
+        section {
+            background-color: rgb(218, 220, 187);
+            padding: 25px;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        .video-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+        .video-content img {
+            width: 48%;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        .video-analysis {
+            width: 48%;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        .video-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        .video-container video {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            background-color: #6a9231;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+        a {
+            color: #2d6d30;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .video-sample-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .video-sample {
+            text-align: center;
+        }
+        .video-sample video {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 768px) {
+            .video-content {
+                flex-direction: column;
+                align-items: center;
+            }
+            .video-content img, .video-analysis {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Video Analysis on Websites
+    </header>
+    <!-- Navigation Bar -->
+    <nav aria-label="Weekly Navigation">
+        <a href="homepage.html" aria-label="homepage">homepage</a>
+        <a href="week1.html" aria-label="Week 1">Week 1</a>
+        <a href="week2.html" aria-label="Week 2">Week 2</a>
+        <a href="week3.html" aria-label="Week 3">Week 3</a>
+        <a href="week5.html" aria-label="Week 5">Week 5</a>
+        <a href="week7.html" aria-label="Week 7">Week 7</a>
+        <a href="moodboard.html" aria-label="Moodboard">Moodboard</a>
+        <a href="week8.html" aria-label="Week 8">Week 8</a>
+        <a href="week9.html" aria-label="Week 9">Week 9</a>
+        <a href="week11.html" aria-label="Week 11">Week 11</a>
+    
+    </nav>
+
+
+    <main>
+        <section>
+            <h2>BBC Good Food</h2>
+            <div class="video-content">
+                <img src="week9bbcgoodfoodweek9.png" alt="BBC Good Food video example">
+                <div class="video-analysis">
+                    <p>The video content on BBC Good Food uses instructional voiceovers and clear visuals to guide users step-by-step through each recipe. It helps beginners follow along easily, and the combination of voice, images, and slow pacing allows for better retention and understanding. Although these longer videos are highly educational, they might not be ideal for users with shorter attention spans. I liked the addition of supportive text as it ensures users don’t miss any important details, making the experience comprehensive and accessible.</p>
+                    <p><a href="https://www.bbcgoodfood.com" target="_blank">Visit BBC Good Food</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Tasty.co</h2>
+            <div class="video-content">
+                <img src="week9tastyco.png" alt="Tasty video example">
+                <div class="video-analysis">
+                    <p>Tasty.co offers fast-paced, visually captivating videos with upbeat music and sound effects. I feel that the dynamic nature of these videos makes the cooking process feel exciting and immersive, perfect for engaging users. However, the quick cuts and brief video lengths can sometimes overwhelm viewers, especially those new to cooking. While the content is energetic, it often sacrifices clarity for entertainment. The lack of captions in some videos further hinders accessibility, though it remains a great option for quick recipe inspiration.</p>
+                    <p><a href="https://tasty.co" target="_blank">Visit Tasty</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Video Samples Section -->
+        <section class="video-sample-container">
+            <h2>Video Samples</h2>
+            <div class="video-sample">
+                <h3>Sample 1</h3>
+                <video controls>
+                    <source src="Week9videosample1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-sample">
+                <h3>Sample 2</h3>
+                <video controls>
+                    <source src="week9videosample2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-sample">
+                <h3>Sample 3</h3>
+                <video controls>
+                    <source src="week9videosample3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-sample">
+                <h3>Sample 4</h3>
+                <video controls>
+                    <source src="week9videosample4.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <section class="video-container">
+            <h2>Edited Video for The Student Pantry</h2>
+            <video controls>
+                <source src="week9thestudentpantryad.mov.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p>Reflecting on the editing process of my video for <em>The Student Pantry</em>, I gained valuable insights into the art of refining content for both clarity and engagement. Throughout the editing phase, I made decisions to streamline the footage by cutting unnecessary sections and focusing on the most impactful parts. I paid close attention to the transitions, pacing, and timing to ensure a smooth, cohesive flow that would keep the viewer engaged. Experimenting with visual effects and sound was an important aspect of this process, as I worked to enhance the tone and mood of the video. Ultimately, this experience taught me the importance of balancing creativity with technical skills, and it helped me build confidence in my ability to produce polished, meaningful content.</p>
+        </section>
+        
+        
+    </main>
+
+    <footer>
+        <p>2791720P MAD Final Project</p>
+    </footer>
+
+</body>
+</html>

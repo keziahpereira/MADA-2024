@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Proposal: The Student Pantry - Week 1</title>
+    
+    <!-- Google Font for Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- Include SheetJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+    
+    <style>
+        body {
+            font-family: Lora, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #c3cbb4 0%, #ced3bc 100%);
+            color: black; 
+            text-align: left;
+            padding-left: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+        }
+    
+        h1, h2, h3 {
+            font-family: 'L', serif;
+            letter-spacing: 1px;
+        }
+    
+        h1 {
+            color: rgb(212, 235, 186);
+            text-transform: uppercase;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+    
+        h2, h3 {
+            color: #5a7b29; 
+            margin-bottom: 15px;
+            font-size: 2em;
+            transition: color 0.3s ease-in-out;
+        }
+        
+        .section h3 {
+            font-size: 1.5em;
+        }
+
+        .section ul {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+        }
+
+        a {
+            color: #4c691d;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+    
+        a:hover {
+            color: #486915;
+        }
+    
+        header {
+            background-color: #486915;
+            color: #b0c990;
+            padding: 30px 0;
+            text-align: center;
+            border-bottom: 5px solid #1a4010;
+            width: 100%;
+            margin: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+        }
+    
+        nav {
+            background-color: #486915;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            margin: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+        }
+    
+        nav a {
+            display: inline-block;
+            color: #daeac7;
+            padding: 20px 30px;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+        }
+    
+        nav a:hover {
+            background-color: #6a9231;
+            color: #222c15;
+        }
+    
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .section {
+            background-color: rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+            padding: 25px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+        }
+    
+        .section h2 {
+            color: #233409;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+    
+        .section p, .section ul, .section ol {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            font-size: 1.1em;
+        }
+    
+        .section ul, .section ol {
+            padding-left: 25px;
+        }
+    
+        .section ul li, .section ol li {
+            margin-bottom: 10px;
+        }
+        /* Excel download button */
+        .download-btn {
+            background-color: #486915;
+            color: #ffffff;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+    
+        .download-btn:hover {
+            background-color: #6a9231;
+        }
+    
+    
+        footer {
+            background-color: #222c15;
+            color: #f6f6f6;
+            text-align: center;
+            padding: 20px;
+            font-size: 1em;
+            margin-top: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    
+        footer a {
+            color: #8dd8aa;
+            font-weight: bold;
+        }
+        /* Excel download button */
+        .download-btn {
+            background-color: #486915;
+            color: #ffffff;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+    
+        .download-btn:hover {
+            background-color: #6a9231;
+        }
+    
+    
+        
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Week1:Project Proposal</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav aria-label="Weekly Navigation">
+        <a href="homepage.html" aria-label="homepage">homepage</a>
+        <a href="week1.html" aria-label="Week 1">Week 1</a>
+        <a href="week2.html" aria-label="Week 2">Week 2</a>
+        <a href="week3.html" aria-label="Week 3">Week 3</a>
+        <a href="week5.html" aria-label="Week 5">Week 5</a>
+        <a href="week7.html" aria-label="Week 7">Week 7</a>
+        <a href="moodboard.html" aria-label="Moodboard">Moodboard</a>
+        <a href="week8.html" aria-label="Week 8">Week 8</a>
+        <a href="week9.html" aria-label="Week 9">Week 9</a>
+        <a href="week11.html" aria-label="Week 11">Week 11</a>
+    
+    </nav>
+
+    <!-- Main content -->
+    <div class="container">
+        
+        <!-- Task 1 Section -->
+        <section class="section" id="week1">
+            <h2>Task 1: Choosing my Topic</h2>
+            <p>5 topics at the top of my head from the course</p>
+            <ul>
+                <li>Information Governance</li>
+                <li>Evolution of the Web</li>
+                <li>Digital Curation</li>
+                <li>Gamification in Education</li>
+                <li>3D Digitisation</li>
+            </ul>
+        </section>
+
+        
+         <!-- Research Section -->
+<section class="section" id="research">
+    <h2>Research</h2>
+    <p>
+        The research for <strong>The Student Pantry</strong> focused on understanding the challenges students face with food preparation and waste. I looked into food sustainability practices, common pantry staples, and simple recipes that can be made with minimal ingredients. I also explored existing platforms like <a href="https://www.bbcgoodfood.com" target="_blank">BBC Good Food</a> and <a href="https://www.allrecipes.com" target="_blank">Allrecipes</a> to see how they organize recipes and cater to their audiences. Additionally, I gathered insights from fellow students at the University of Glasgow to ensure the website meets their needs, particularly regarding ease of use and accessibility. The goal was to create a resource that genuinely helps students save time, money, and reduce food waste.
+    </p>
+</section>
+
+
+       
+
+        <!-- Task 2 Section -->
+        <section class="section" id="week2">
+            <h2> Task 2: Topic Introduction</h2>
+            <p>The current issue of food waste and limited access to affordable ingredients has caused significant challenges for students. Many struggle with planning meals or utilizing their groceries effectively, leading to food waste and poor nutrition.</p>
+            <p>Examples of challenges include:</p>
+            <ul>
+                <li>Inconsistent access to fresh ingredients</li>
+                <li>Limited time for meal preparation</li>
+                <li>Inability to use all groceries before they spoil</li>
+            </ul>
+            <p>To address these issues, I propose a website called <strong>The Student Pantry</strong>. This website is designed to assist users in making the most of the ingredients in their pantry. It will assume that users have salt and water.</p>
+            <p>The main functions of the website include:</p>
+            <ol>
+                <li>Users must enter their ingredients in the search bar.</li>
+                <li>Once entered, the website will provide links to easy, accessible recipes.</li>
+                <li>The website will allow users to choose the difficulty level of the recipe.</li>
+                <li>There will also be a waiting game for users to play while their meals are cooking.</li>
+            </ol>
+        </section>
+
+        <!-- Task 3 Section -->
+        <section class="section" id="task3">
+            <h2> Task 3: Target Audience</h2>
+            <h3>Target Audience</h3>
+            <p>The main target audience for <strong>The Student Pantry</strong> is students at the University of Glasgow. This platform will later be marketed to students at other universities.</p>
+            <h3>Benefits of the Website</h3>
+            <ul>
+                <li>Empowering users to create meals without additional purchases.</li>
+                <li>Encouraging sustainability by minimizing food waste.</li>
+                <li>Increasing awareness of food waste and food scarcity issues.</li>
+                <li>Maximizing the use of available ingredients.</li>
+            </ul>
+
+            <h3>Engagement with Users</h3>
+            <p>The website will incorporate features for user engagement, including:</p>
+            <ul>
+                <li>A feedback section where users can share their thoughts on recipes.</li>
+                <li>Option for users to add their own recipes.</li>
+                <li>Discussion forums where users can share cooking tips and sustainability practices.</li>
+            </ul>
+        </section>
+<!-- Excel File Download Link -->
+<a href="mada-metadata_justification_table.pdf" class="download-btn" download>Download my Meta Data Justification Table </a>
+</section>
+
+    </div>
+    
+
+    <!-- Footer -->
+    <footer>
+        <p> 2791720P MAD Final project</p>
+    </footer>
+
+   
+
+</body>
+</html>

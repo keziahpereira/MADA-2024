@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 2 Tasks</title>
+    <script src="myBtn.js" defer></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab|Poppins|Merriweather">
+    <style>
+        body {
+            font-family: 'Lora', serif;
+            background: linear-gradient(135deg, #c3cbb4 0%, #ced3bc 100%);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1 {
+            font-size: 1.5rem;
+            color: #f1f8ee;
+        }
+        h2, h3 {
+            font-weight: 600;
+            color: #243f13;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 20px;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #ecf2e9;
+        }
+
+        /* User persona section */
+        .user-persona img {
+            width: 40%;
+            height: auto;
+            max-width: 120px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #486915;
+            color: rgb(179, 214, 139);
+            padding: 30px;
+            text-align: center;
+            border-bottom: 5px solid #1c4412;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            background-color: #486915;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            display: inline-block;
+            color: #daeac7;
+            padding: 20px 30px;
+            text-align: center;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #6a9231;
+            color: #222c15;
+        }
+
+        /* Persona and Table Styles */
+        .persona-list li {
+            margin: 10px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #cfd7ca;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #b0c69c;
+        }
+
+        th {
+            background-color: #264a21;
+            color: white;
+        }
+
+        tr:hover td {
+            background-color: #ecf0f1;
+        }
+
+        /* Mood Board */
+        .mood-board {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .mood-board img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ced3bc;
+  background-color: #c4cba9;
+}
+
+
+        /* Footer Styling */
+        footer {
+            background-color: #486915;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer #menu {
+            margin: 20px 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+
+        footer a:hover {
+            background-color: #264a21;
+        }
+    </style>
+</head>
+<body>
+    <header id="title">
+        
+            <h1>Week 2</h1>
+    
+            <h3>Principles of Design: Users</h3>
+        </div>
+    </header>
+    <!-- Navigation Bar -->
+    <nav aria-label="Weekly Navigation">
+        <a href="homepage.html" aria-label="homepage">homepage</a>
+        <a href="week1.html" aria-label="Week 1">Week 1</a>
+        <a href="week2.html" aria-label="Week 2">Week 2</a>
+        <a href="week3.html" aria-label="Week 3">Week 3</a>
+        <a href="week5.html" aria-label="Week 5">Week 5</a>
+        <a href="week7.html" aria-label="Week 7">Week 7</a>
+        <a href="moodboard.html" aria-label="Moodboard">Moodboard</a>
+        <a href="week8.html" aria-label="Week 8">Week 8</a>
+        <a href="week9.html" aria-label="Week 9">Week 9</a>
+        <a href="week11.html" aria-label="Week 11">Week 11</a>
+    </nav>
+
+    <div class="container main-content">
+        <h2>Audience Analysis</h2>
+        <table class="audience-table">
+            <thead>
+                <tr>
+                    <th>Audience Characteristic</th>
+                    <th>Rationale</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Age</td>
+                    <td>17 - 28</td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td>Mixed</td>
+                </tr>
+                <tr>
+                    <td>Language Proficiency</td>
+                    <td>Fluent in English (Planning multi-language search bar)</td>
+                </tr>
+                <tr>
+                    <td>Education Level</td>
+                    <td>University Students</td>
+                </tr>
+                <tr>
+                    <td>Knowledge of the Topic</td>
+                    <td>Medium</td>
+                </tr>
+                <tr>
+                    <td>Audience Action</td>
+                    <td>Utilize pantry ingredients effectively</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="container user-personas">
+            <section class="user-persona">
+                <h2>1.User Persona: Student Alex</h2>
+                <img src="week2persona2.jpg" alt="Cartoon character of smiling male student">
+                <ul class="persona-list">
+                    <li><strong>Name:</strong> Alex Johnson</li>
+                    <li><strong>Age:</strong> 21</li>
+                    <li><strong>Gender:</strong> Male</li>
+                    <li><strong>Education:</strong> 3rd Year Environmental Science Student</li>
+                </ul>
+                <h3>Background</h3>
+                <p>Alex is passionate about sustainability, but he struggles with meal planning. He’s trying to minimize food waste while managing a tight student budget.</p>
+                <h3>Goals</h3>
+                <ul>
+                    <li>Minimize food waste</li>
+                    <li>Learn budget-friendly cooking techniques</li>
+                    <li>Find quick, healthy meals</li>
+                </ul>
+            </section>
+        
+            <section class="user-persona">
+                <h2>2.User Persona: Student Emily</h2>
+                <img src="week2persona1.jpg" alt="Cartoon character of smiling female student">
+                <ul class="persona-list">
+                    <li><strong>Name:</strong> Emily Parker</li>
+                    <li><strong>Age:</strong> 18</li>
+                    <li><strong>Gender:</strong> Female</li>
+                    <li><strong>Education:</strong> 1st Year Psychology Student</li>
+                </ul>
+                <h3>Background</h3>
+                <p>Emily is adjusting to university life and wants to eat healthier but lacks confidence in the kitchen. She needs help using up pantry ingredients creatively.</p>
+                <h3>Goals</h3>
+                <ul>
+                    <li>Learn to cook nutritious meals</li>
+                    <li>Avoid food waste</li>
+                    <li>Find easy recipes that don’t require many ingredients</li>
+                </ul>
+                <section class="user-journey">
+                    <h2>User Journey Mapping</h2>
+                    <table class="journey-table">
+                        <thead>
+                            <tr>
+                                <th>Stage</th>
+                                <th>Stage 1</th>
+                                <th>Stage 2</th>
+                                <th>Stage 3</th>
+                                <th>Stage 4</th>
+                                <th>Stage 5</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Objectives</strong></td>
+                                <td>Explore wellness tools</td>
+                                <td>Identify food resources</td>
+                                <td>Find platforms</td>
+                                <td>Explore meals</td>
+                                <td>Cook and review</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Actions</strong></td>
+                                <td>Search online</td>
+                                <td>Talk to peers</td>
+                                <td>Browse platforms</td>
+                                <td>Explore recipes</td>
+                                <td>Cook meals</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Feelings</strong></td>
+                                <td>Excited, overwhelmed</td>
+                                <td>Curious</td>
+                                <td>Frustrated</td>
+                                <td>Happy</td>
+                                <td>Accomplished</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Touchpoints</strong></td>
+                                <td>Social media</td>
+                                <td>Conversations</td>
+                                <td>Recipe sites/apps</td>
+                                <td>Social influencers</td>
+                                <td>Reviews/Feedback</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Challenges</strong></td>
+                                <td>Time management</td>
+                                <td>Limited budget</td>
+                                <td>Overwhelmed by options</td>
+                                <td>Time management</td>
+                                <td>Food waste</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+    
+    </div>
+
+    <div class="container main-content">
+        <div class="evaluation-section">
+            <h2>Evaluation of Webpages</h2>
+            <p>
+                My evaluation of the BBC Good Food website highlights its excellent user experience due to intuitive navigation and engaging design. The homepage is clean, with well-categorized sections and a clear focus on food-related content. The search functionality is robust, offering easy access to a wide range of recipes tailored to user preferences. However, the abundance of advertisements and pop-ups can occasionally detract from the user experience, making navigation slightly cumbersome. The inclusion of nutritional information and filters such as dietary preferences enhances accessibility, particularly for health-conscious users. Overall, BBC Good Food effectively balances aesthetic appeal with practical functionality.
+            </p>
+        </div>
+
+    <section class="mood-board">
+        <h2>Mood Board</h2>
+        <img src="week2moodboard.png" alt="Mood board showcasing creative designs">
+    </section>
+</div>
+
+<div><section class="section" id="task3">
+    <h2>Reflection point</h2>  
+    <p>As I explored various websites related to food, such as BBC Good Food and Allrecipes, my journey became an invaluable learning experience that shaped the design of The Student Pantry. I quickly realized that while these sites offered great recipes, they didn't address the specific needs of students, like reducing food waste or maximizing limited ingredients. By applying the principles of design thinking—empathy, ideation, prototyping, and testing—I was able to create a more tailored solution. I focused on understanding students' frustrations with meal prep and food waste, ideating a platform where they could easily input ingredients to find quick, sustainable recipes. The iterative process of prototyping allowed me to refine the website, ensuring it was both functional and user-friendly, with the goal of empowering students to make the most of their resources while promoting sustainability.</p>
+
+
+</section>
+
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <p>2791720P MAD Final Project</p>
+    </footer>
+
+</body>
+</html>
