@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Chat - The Student Pantry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background: #3a5a14;
+            color: #20441c;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            padding-top: 60px; /* Space for the navbar */
+            overflow: hidden;
+        }
+
+        .navbar {
+    width: 100%;
+    background: #20441c;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Space between links */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-link {
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.1); /* Slight background for separation */
+    border-radius: 10px;
+    transition: background 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.navbar a {
+    color: #f3f7cd;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: block;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #d1b537;
+}
+
+
+
+        /* Three-Dot Menu */
+        .menu-container {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+
+        #menuButton {
+            background: none;
+            border: none;
+            font-size: 1.8em;
+            color: #f3f7cd;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .popup-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            background: #20441c;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .popup-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: #f3f7cd;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        .popup-menu a:hover {
+            background: #d1b537;
+            color: #20441c;
+        }
+
+
+
+        .chat-container {
+            width: 95%;
+            max-width: 1400px;
+            height: calc(100vh - 80px); /* Adjust height for navbar */
+            background: #678a38;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(126, 184, 142, 0.925);
+            margin-top: 80px; /* Space for navbar */
+            overflow: hidden;
+        }
+
+        .messages {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 15px;
+            background: rgb(246, 243, 219);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        input, button {
+            padding: 12px;
+            border-radius: 10px;
+            border: 2px solid #a7bd73;
+        }
+
+        input {
+            flex-grow: 1;
+            font-size: 1em;
+        }
+
+        button {
+            background-color: #d1b537;
+            color: rgb(251, 249, 222);
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: #6e691e;
+        }
+
+        .message {
+            background: #d1b537;
+            color: rgb(251, 249, 222);
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px 0;
+            max-width: 60%;
+            align-self: flex-start;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .message .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+
+        .profile-pic {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+
+        .username {
+            font-weight: bold;
+            color: #20441c;
+        }
+
+        .settings-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+         /* The Wait Game Popup */
+         #waitGamePopup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            right: 10px;  /* Adjusted position to the right */
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 9999;
+            width: 70%; /* Increased the width */
+            max-width: 600px; /* Maximum width for the iframe */
+            height: 90%; /* Increased the height */
+        }
+
+        #waitGamePopup iframe {
+            width: 100%;
+            height: 100%;  /* Ensure iframe fills the entire popup container */
+            border: none;
+            border-radius: 10px;
+        }
+
+        #closeWaitGame {
+            background-color: #d1b537;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="navbar">
+        <div class="nav-link">
+            <a href="about.html">About</a>
+        </div>
+        <div class="nav-link">
+            <a href="thestudentpantry.html">Generator</a>
+        </div>
+        <div class="nav-link">
+            <a href="#" id="waitGameLink">Wait Game</a>
+        </div>
+        
+        <div class="nav-link">
+            <a href="studentnotepad.html">Meal Planner</a>
+        </div>
+    
+        <!-- Three-Dot Menu -->
+        <div class="menu-container">
+            <button id="menuButton">⋮</button>
+            <div id="popupMenu" class="popup-menu">
+                <a href="#">About</a>
+                <a href="#">Info</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </div>
+      <!-- Wait Game Pop-up -->
+      <div id="waitGamePopup">
+        <iframe src="shark.html" id="waitGameIframe"></iframe>
+        <button id="closeWaitGame">Close</button>
+    </div>
+    
+    
+    
+    <div class="chat-container">
+        <div class="settings-container">
+            <input type="text" id="usernameInput" placeholder="Enter your username...">
+            <input type="file" id="profilePicInput" accept="image/*">
+            <button onclick="changeUsername()">Set Username</button>
+        </div>
+        <div class="messages" id="chatMessages"></div>
+        <div class="input-container" id="chatInputContainer" style="display: none;">
+            <input type="text" id="messageInput" placeholder="Type a message...">
+            <input type="file" id="imageInput" accept="image/*">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+    <script>
+        let username = "";
+        let profilePic = "";
+
+        function changeUsername() {
+            let usernameInput = document.getElementById("usernameInput").value.trim();
+            let profilePicInput = document.getElementById("profilePicInput");
+            if (usernameInput) {
+                username = usernameInput;
+                if (profilePicInput.files.length > 0) {
+                    let reader = new FileReader();
+                    reader.onload = function(event) {
+                        profilePic = event.target.result;
+                    };
+                    reader.readAsDataURL(profilePicInput.files[0]);
+                }
+                document.getElementById("chatInputContainer").style.display = "flex";
+            }
+        }
+
+        function sendMessage() {
+            if (!username) return;
+
+            let messageInput = document.getElementById("messageInput");
+            let imageInput = document.getElementById("imageInput");
+            let messageText = messageInput.value.trim();
+            let chatMessages = document.getElementById("chatMessages");
+            let messageElement = document.createElement("div");
+            messageElement.classList.add("message");
+
+            let profileHeader = document.createElement("div");
+            profileHeader.classList.add("profile-header");
+
+            let profilePicElement = document.createElement("img");
+            profilePicElement.classList.add("profile-pic");
+            profilePicElement.src = profilePic || "default-profile.png";
+            profileHeader.appendChild(profilePicElement);
+
+            let usernameElement = document.createElement("span");
+            usernameElement.classList.add("username");
+            usernameElement.textContent = username;
+            profileHeader.appendChild(usernameElement);
+
+            messageElement.appendChild(profileHeader);
+
+            if (messageText) {
+                let textNode = document.createElement("p");
+                textNode.textContent = messageText;
+                messageElement.appendChild(textNode);
+            }
+
+            chatMessages.appendChild(messageElement);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            messageInput.value = "";
+            imageInput.value = "";
+        }
+
+    
+
+// Show the Wait Game pop-up when clicking the link
+document.getElementById("waitGameLink").addEventListener("click", function(event) {
+    event.preventDefault();
+    document.getElementById("waitGamePopup").style.display = "block";
+});
+
+// Close the Wait Game pop-up
+document.getElementById("closeWaitGame").addEventListener("click", function() {
+    document.getElementById("waitGamePopup").style.display = "none";
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About The Student Pantry</title>
+    <style>
+         .navbar {
+    width: 100%;
+    background: #20441c;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Space between links */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+..navbar {
+    width: 100%;
+    background: #20441c;
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between links */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-link {
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: background 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.navbar a {
+    color: #f3f7cd;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    display: block;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #d1b537;
+}
+
+/* Three-Dot Menu */
+.menu-container {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#menuButton {
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: #f3f7cd;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.popup-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background: #20441c;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.popup-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #f3f7cd;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+.popup-menu a:hover {
+    background: #d1b537;
+    color: #20441c;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .menu-container {
+        right: 10px;
+    }
+}
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #486915;
+            color: #333;
+        }
+        .header {
+            background-color: #20441c;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            font-size: 2em;
+            letter-spacing: 2px;
+        }
+        .container {
+    max-width: 1200px;
+    margin: 120px auto 50px auto; /* Increased margin-top to 120px */
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.1em;
+}
+        .about-text {
+            line-height: 1.6;
+            color: #555;
+        }
+        .highlight {
+            color: #20441c;
+            font-weight: bold;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #486915;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.1em;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .cta-button:hover {
+            background-color: #5aa763;
+        }
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            .header {
+                font-size: 1.5em;
+                padding: 30px 0;
+            }
+        }
+
+        /* The Wait Game Popup */
+        #waitGamePopup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            right: 10px;  /* Adjusted position to the right */
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 9999;
+            width: 70%; /* Increased the width */
+            max-width: 600px; /* Maximum width for the iframe */
+            height: 90%; /* Increased the height */
+        }
+
+        #waitGamePopup iframe {
+            width: 100%;
+            height: 100%;  /* Ensure iframe fills the entire popup container */
+            border: none;
+            border-radius: 10px;
+        }
+
+        #closeWaitGame {
+            background-color: #d1b537;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-link">
+            <a href="thestudentpantry.html">Generator</a>
+        </div>
+        <div class="nav-link">
+            <a href="#" id="waitGameLink">Wait Game</a>
+        </div>
+        <div class="nav-link">
+            <a href="studentchat.html">Student Chat</a>
+        </div>
+        <div class="nav-link">
+            <a href="studentnotepad.html">Meal Planner</a>
+        </div>
+    
+        <!-- Three-Dot Menu -->
+        <div class="menu-container">
+            <button id="menuButton">⋮</button>
+            <div id="popupMenu" class="popup-menu">
+                <a href="#">About</a>
+                <a href="#">Info</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </div>
+     <!-- Wait Game Pop-up -->
+     <div id="waitGamePopup">
+        <iframe src="shark.html" id="waitGameIframe"></iframe>
+        <button id="closeWaitGame">Close</button>
+    </div>
+
+    
+
+    <div class="container">
+        <p class="about-text">
+            <span class="highlight">Got random stuff in your fridge? Let’s turn it into a meal you’ll actually want to eat.</span>
+        </p>
+
+        <p class="about-text">
+            Being a student means juggling a lot—lectures, assignments, and somehow always running low on groceries. That’s where <strong>The Student Pantry</strong> comes in. It helps you turn whatever’s in your fridge into something delicious, nutritious, and sustainable—without extra grocery trips or food waste.
+        </p>
+
+        <p class="about-text">
+            We don’t just want you to eat random food; we want you to eat well. Our goal is to provide you with easy, budget-friendly recipes that not only use what you’ve already got but also focus on delivering balanced meals that fuel your body and keep you feeling good.
+        </p>
+
+        <p class="about-text">
+            Just enter the ingredients you’ve got, and we’ll show you tasty, wholesome recipes that make the most of what you have. Whether it’s leftovers or a few pantry staples, we’ve got you covered.
+        </p>
+
+        <p class="about-text">
+            No more wasted food. No more complicated meals. And no more spending cash on takeout. Plus, you'll be eating meals that nourish your body, too.
+        </p>
+
+        <a href="thestudentpantry.html" class="cta-button">Start Cooking Now</a>
+    </div>
+    <script>
+
+// Show the Wait Game pop-up when clicking the link
+document.getElementById("waitGameLink").addEventListener("click", function(event) {
+    event.preventDefault();
+    document.getElementById("waitGamePopup").style.display = "block";
+});
+
+// Close the Wait Game pop-up
+document.getElementById("closeWaitGame").addEventListener("click", function() {
+    document.getElementById("waitGamePopup").style.display = "none";
+});
+</script>
+</body>
+</html>

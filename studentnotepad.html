@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly Meal Planner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            background: #486915;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(135deg, #1f3f18, #2d4104);
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 10px rgba(108, 128, 90, 0.6);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar a:hover {
+            transform: scale(1.1);
+        }
+
+        .content {
+            width: 90%;
+            max-width: 1200px;
+            margin-top: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .meal-container {
+            width: 100%;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1.1em;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background: #486915;
+            color: white;
+        }
+
+        input.meal-input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #d1b537;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #6e691e;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="about.html">About</a>
+        <a href="#" id="waitGameLink">Wait Game</a>
+        <a href="thestudentpantry.html">Generator</a>
+        <a href="studentchat.html">Student Chat</a>
+    </div>
+
+    <div class="content">
+        <div class="meal-container">
+            <h1>📅 Weekly Meal Planner 🍽️</h1>
+            <table>
+                <tr>
+                    <th>Day</th>
+                    <th>Breakfast</th>
+                    <th>Lunch</th>
+                    <th>Dinner</th>
+                </tr>
+                <script>
+                    let days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+                    days.forEach(day => {
+                        document.write(`<tr>
+                            <td>${day}</td>
+                            <td><input type="text" class="meal-input" data-day="${day}" data-meal="breakfast"></td>
+                            <td><input type="text" class="meal-input" data-day="${day}" data-meal="lunch"></td>
+                            <td><input type="text" class="meal-input" data-day="${day}" data-meal="dinner"></td>
+                        </tr>`);
+                    });
+                </script>
+            </table>
+            <button onclick="saveMeals()">Save Meals</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            loadMeals();
+        });
+
+        function saveMeals() {
+            let meals = {};
+            document.querySelectorAll(".meal-input").forEach(input => {
+                meals[`${input.dataset.day}-${input.dataset.meal}`] = input.value;
+            });
+            localStorage.setItem("mealPlanner", JSON.stringify(meals));
+            alert("Meals saved!");
+        }
+
+        function loadMeals() {
+            let meals = JSON.parse(localStorage.getItem("mealPlanner")) || {};
+            document.querySelectorAll(".meal-input").forEach(input => {
+                let key = `${input.dataset.day}-${input.dataset.meal}`;
+                if (meals[key]) {
+                    input.value = meals[key];
+                }
+            });
+        }
+    </script>
+</body>
+</html>
